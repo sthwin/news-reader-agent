@@ -58,7 +58,7 @@ def scrape_tool(url: str):
             "svg",
         ]
 
-        for tag in soup.find_all():
+        for tag in soup.find_all(unwanted_tags):
             tag.decompose()
 
         content = soup.get_text(separator=" ")
